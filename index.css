@@ -1,0 +1,584 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+}
+/*Header*/
+.header {
+    width: 100%;
+    color:rebeccapurple
+}
+.header > .navbar {
+    text-align:center;
+    width: 96%;
+    padding: 15px 2%;
+    display: flex;
+}
+.header > .navbar >  h2 {
+    width:fit-content;
+    margin: auto;
+    font-size: 6vw;
+    font-family:sans-serif;
+}
+.header > .navbar >  #menu {
+width: fit-content;
+margin: auto 0;
+}
+/*
+.header >.navbar> #menu > img{
+width:5vw;
+margin: auto;
+}*/
+/*menu bar*/
+.header > .navbar > #menu > span {
+    display: block;
+    width:20px;
+    height:2px;
+    margin:6px 0;
+    background-color:rebeccapurple;
+    transition: 0.3s;
+}
+
+.header > .navbar > #menu > span:nth-child(2) {
+  margin-bottom:-2px;
+}
+.header > .navbar > #menu > span:nth-child(3){
+ margin-top:-2px;
+}
+/*animated menu*/
+.header > .navbar >div.active > span:nth-child(1){
+    transform: translateY(-10px);
+    transition: 0.3s;
+    opacity:0;
+    
+}
+.header > .navbar >div.active >span:nth-child(4){
+    transform: translateY(10px);
+    transition: 0.3s;
+    opacity:0;
+}
+.header > .navbar >div.active >span:nth-child(2){
+    transition: 0.3s;
+    transform:rotate(135deg);
+}
+.header > .navbar >div.active >span:nth-child(3){
+    transition: 0.3s;
+    transform:rotate(-135deg);
+}
+
+/*menu*/
+nav {
+    width:100%;
+    height:0;
+    padding:0;
+    margin: 0;
+    overflow: hidden;
+}
+nav > ul {
+    width:98%;
+    padding:1%;
+    margin: 0;
+}
+nav >ul > li {
+    width:98%;
+    padding: 1%;
+    font-size:4vw;
+    margin: 0;
+    margin-top:10px;
+}
+nav > ul > li > a{
+    text-decoration: none;
+    color: grey;
+}
+
+.open {
+height:fit-content;
+}
+
+/*profile*/
+#profile-photo{
+       width:95%;
+       padding:2.5%;
+       background:linear-gradient(45deg,rebeccapurple 50%,whitesmoke 50%);
+}
+#profile-photo > img {
+    margin: 0 30%;
+    width:40%;
+    height:40%;
+    border-radius:100%;
+    box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.080),-2px -2px 3px 2px rgba(0,0,0,0.080);
+}
+
+/*About me*/
+.about-me {
+    width:100%;
+    overflow: hidden;
+    margin: 10% 0;
+}
+#one > #img1 {
+    float: left;
+    width: 30%;
+}
+
+.about {
+    width: 60%;
+    padding:5%;
+    word-break:normal;
+    margin: 5px 15%;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.about > p{
+    font-family:fantasy;
+    color: rebeccapurple;
+    font-size: 4vw;
+    margin:0;
+}
+
+#two > #img2{
+    float: right;
+    width: 30%;
+}
+
+/*About animation*/
+
+.slideIn{
+  transition: 1s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*Service*/
+.service {
+    text-align: center;
+    width:75%;
+    padding:2.5%;
+    margin:10%;
+    background-color: white;
+    border: transparent;
+    border-radius:10px;
+    box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.030),-2px -2px 3px 2px rgba(0,0,0,0.030);
+    transition: 0.5s;
+}
+.service:hover {
+    transform: scale(1.1);
+    transition:0.5s;
+}
+
+.service > #head {
+    width:50%;
+    margin:5px 25%;
+    display: flex;
+
+}
+.service > #head > img {
+    width:22%;
+    height:22%;
+    margin: auto;
+    margin-right: 0;
+}
+.service >#head > h3{
+    width:fit-content;
+    font-size:6vw;
+    margin: auto;
+    margin-left: 0;
+    color: rebeccapurple;
+}
+.service > .services  {
+   width:100%;
+   margin: 5% 0;
+   display: flex;
+   flex-direction: column;
+   border: transparent;
+
+}
+.service  > .services > span {
+    width:55%;
+    padding:3% 2.5%;
+    margin:5px 20%;
+    border-radius: 5px;
+    background:linear-gradient(-50deg,rgb(123, 252, 17),rgb(86, 127, 252));
+    color:white;
+}
+.service > .services > span > img {
+    width:35%;
+    height:35%;
+}
+.service > .services > span > h4{
+  margin: 4px;
+  font-size:3vw
+}
+
+/*Hire me*/
+.feedhire {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hire {
+    width:75%;
+    margin:2.5% 10%;
+    padding:2.5%; 
+    background-color: white;
+    box-shadow: -1px -1px 10px 3px rgba(0,0,0,0.030),1px 1px 10px 3px rgba(0,0,0,0.030);
+    border: transparent;
+    border-radius:10px;
+    transition:0.5s;
+}
+.hire:hover {
+  transform: scale(1.1);
+  transition:0.5s;
+}
+
+.hire > #head {
+    width: 90%;
+    margin:5px 5%;
+    display: flex;  
+}
+.hire > #head > img {
+    width:15%;
+    height:15%;
+    margin: auto;
+    margin-right: 0;
+}
+.hire >#head > h3{
+    width:fit-content;
+    font-size:5vw;
+    margin: auto;
+    margin-left: 0;
+    color: rebeccapurple;
+}
+
+.hire > #contact-list{
+   list-style: none;
+   width:95%;
+   padding:4% 2.5%;
+   border-radius: 5px;
+   
+}
+
+.hire > #contact-list > li {
+    width:95%;
+    margin:0 2.5%;
+}
+.hire > #contact-list > li >a {
+    display: flex;
+    text-decoration: none
+    ;
+}
+.hire > #contact-list > li > a > img {
+    width:10%;
+    height:10%;
+    padding:3px 3px 3px 0;
+}
+.hire > #contact-list > li > a > #fiverr {
+    width: 7%;
+    margin:auto 0;
+    padding-left:3px;
+    margin-right:5px;
+}
+.hire > #contact-list > li > a > span{
+    margin:auto 5px;
+    color: rebeccapurple;
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+/*main feedback*/
+#main-feedback {
+ 
+    border: transparent;
+    background:-webkit-linear-gradient(top,whitesmoke 50%,rebeccapurple 50%);
+    width:90%;
+    padding:5%;
+
+}
+
+
+#main-feedback > .feedback {
+  
+    border-radius: 5px;
+    box-shadow: -1px -1px 10px 3px rgba(0,0,0,0.030),1px 1px 10px 3px rgba(0,0,0,0.030);
+    background-color: white;
+    width: 85%;
+    padding:2.5%;
+    margin:5%;
+    transition: 0.5s;
+
+}
+#main-feedback > .feedback > #head {
+
+    width:50%;
+    margin:5px 25%;
+    display: flex;
+    justify-content:space-around;
+
+}
+#main-feedback > .feedback > #head > img {
+  
+    width: 20%;
+    height: 20%;
+
+}
+#main-feedback > .feedback > #head > h3 {
+
+    font-size: 5vw;
+    color: rebeccapurple;
+    margin:auto 0;
+
+}
+#main-feedback > .feedback > #input {
+    
+    width:90%;
+    padding:5px 2.5%;
+    margin: 2.5%;
+    font-size:4vw;
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.080);
+    
+}
+#main-feedback > .feedback:hover {
+    transform: scale(1.1);
+    transition:0.5s;
+}
+#main-feedback > .feedback > textarea {
+    resize: none;
+    height: 10vh;
+}
+
+#main-feedback > .feedback > button {
+
+    width:50%;
+    padding:2.5% 0;
+    margin: 2.5%;
+    border-radius: 5px;
+    font-size: 4vw;
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+
+}
+
+#main-feedback > .feedback > span {
+    display: block;
+    font-family: sans-serif;
+    font-size: 3vw;
+    margin: auto;
+    width: fit-content;
+    margin: auto;
+    color: grey;
+}
+
+
+footer {
+
+    border:transparent;
+    text-align: center;
+    width:95%;
+    padding:2.5%;
+    background-color: rebeccapurple;
+
+}
+footer > p {
+
+    color: white;
+    font-size: 3vw;
+
+}
+
+@media (min-width:900px){
+ 
+ #profile-photo > img {
+     margin: 0 35%;
+     width:30%;
+     height:30%;
+     border-radius:100%;
+     box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.080),-2px -2px 3px 2px rgba(0,0,0,0.080);
+ }
+
+    .header {
+
+        display: flex;
+
+    }
+    
+    .header > .navbar {
+        width:fit-content;
+        border: none;
+    }
+    .header > .navbar > h2 {
+        width:100%;
+        font-size: 5vw;
+    }
+    .header > .navbar >  #menu {
+        display: none;
+    }
+       
+    /*menu*/
+    nav {
+        width:50%;
+        padding:0;
+        margin:auto;
+        height: auto;
+    }
+    nav > ul {
+        word-break: none;
+        text-align: center;
+        display:flex;
+        flex-wrap: nowrap;
+        list-style: none;
+        justify-content: space-around;
+    }
+    nav > ul > li {
+        display: inline; 
+        font-size: 2vw;
+        margin:0 3%;
+    }
+    nav > ul > li:hover {
+        background-color: rebeccapurple;
+        border-radius: 5px;
+    }
+    nav > ul > li:hover > a {
+       color:white;
+    }
+
+
+   /*ABout me*/
+.about-me {
+    width: 100%;
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+}
+.about {
+    width: 95%;
+    margin:2.5%;
+    padding: 0;
+}
+.about > p{
+    font-size: 2vw;
+    margin-left:5px;
+}
+
+/**/
+
+.service > #head > img {
+    width: 10%;
+    height: 10%;
+}
+.service > #head > h3 {
+    font-size: 3vw;
+}
+.service > .services {
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+.service > .services > span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:50%;
+    padding:0;
+    margin:0 10%;
+    justify-content: space-around;
+}
+.service > .services > span > h4 {
+    width: fit-content;
+    font-size: 2vw;
+}
+
+/*hier*/
+
+.hire {
+  width: 45%;
+  margin:auto 25%;
+  padding:2.5%;
+}
+
+.hire > #head {
+    width:100%;
+    margin:5px 0;
+    display: flex;  
+}
+.hire > #head > img {
+    width:10%;
+    height:10%;
+}
+.hire >#head > h3{
+    width:fit-content;
+    font-size:3vw;
+
+}
+
+.hire > #contact-list > li{
+    margin: 5% auto;
+}
+
+.hire > #contact-list > li > a > img {
+    width:7%;
+    height:7%;
+}
+.hire > #contact-list > li > a > #fiverr {
+    width: 6%;
+    margin:auto 0;
+    padding-left:3px;
+    margin-right:2px;
+}
+.hire > #contact-list > li > a > span{
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+/*main feedback*/
+#main-feedback {
+    background:linear-gradient(45deg,rebeccapurple,purple);
+    width:45%;
+    padding:2.5%;
+    margin:5% 25%;
+    border-radius:30px 80% 30px 30px;
+}
+
+
+#main-feedback > .feedback {
+  
+    border-radius: 5px;
+    box-shadow: -1px -1px 10px 3px rgba(0,0,0,0.050),1px 1px 10px 3px rgba(0,0,0,0.050);
+    background-color: white;
+    width:80%;
+    padding:2.5%;
+    margin:7.5%;
+
+}
+
+#main-feedback > .feedback > #head > img {
+  
+    width: 18%;
+    height: 18%;
+
+}
+#main-feedback > .feedback > #head > h3 {
+    font-size: 4vw;  
+}
+#main-feedback > .feedback > #input {
+    
+    font-size:3vw;
+}
+#main-feedback > .feedback > textarea {
+    height: 15vh;
+}
+
+#main-feedback > .feedback > button {
+
+    font-size: 2vw;
+}
+
+#main-feedback > .feedback > span {
+    font-size: 2vw;
+}
+
+}
