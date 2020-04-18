@@ -4,7 +4,6 @@ const nav = document.getElementById("nav");
 const intro = document.getElementById("intro");
 const service = document.getElementById("service");
 const one = document.getElementById("one");
-const two = document.getElementById("two");
 const feed = document.getElementById("feedback");
 const sendbtn = document.getElementById("send");
 
@@ -24,7 +23,6 @@ window.addEventListener('load',function(e){
     console.log("working")
     header.classList.toggle("slideIn");
     one.classList.toggle("slideIn");
-    two.classList.toggle("slideIn");
 })
 
 feedback.addEventListener('keydown',function(event){
