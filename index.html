@@ -9,118 +9,83 @@
 </head>
 
 <body>
-    
-    <div id="profile-photo">
-        <img src="./profile.jpg"/>
-    
-    </div>
 
     <header class="header" id="header">
 
         <div class="navbar">
             <div id="menu" onclick="slide()">
-               <!-- <img src="Icons/menu.svg">-->
-               <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
+                <!-- <img src="Icons/menu.svg">-->
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <h2>NOOB CODER</h2>
         </div>
 
         <nav class="menu" id="nav">
-            <ul> 
+            <ul>
                 <li> <a href="#hire">My Work</a></li>
                 <li><a href="#feedback">Hire</a></li>
-                <li><a href="#feedback">feedback</a></li>
+                <span>Abdullah</span>
             </ul>
         </nav>
     </header>
-       
-    <!--About me wrapper-->
-    <div class="about-me">
-        <div class="about" id="one">
-            <img src="./Icons/gamer.svg" id="img1" />
-            <p>A 20 years old , passionate web developer.Spend most of the time in developing.I am always ready to learn
-                new web
-                technology.
-                <br/><br/>
-             I use html , css , vanilla js , react js for frontend development and node js , express , mongodb for backend development.
-             <br/>
-             I know little bit other programming languages like c , c++ , java , python.
-            </p>
-        </div>
+
+    <!--About me-->
+    <div class="about" id="one">
+
+        <p>A 20 years old , passionate web developer.Spend most of the time in developing.I am always ready to learn
+            new web
+            technology.
+            <br /><br />
+            I use html , css , vanilla js , react js for frontend development and node js , express , mongodb for
+            backend development.
+            <br />
+            I know little bit other programming languages like c , c++ , java , python.
+        </p>
     </div>
 
-        <!--Service wrapper-->
-        <div class="service" id="service">
+    <div id="profile-photo">
+        <img src="./profile.jpg" />
+    </div>
 
-            <span id="head">
-                <img src="Icons/consult.svg" />
-                <h3>Service</h3>
-            </span>
+    <div class="circle c1"></div>
+    <div class="circle c2" ></div>
+    <div class="circle c3" ></div>
+    <div class="circle c5"></div>
+    <div class="circle c4"></div>
+    <div class="circle c6"></div>
+    <!--contact-->
+    <div class="contact">
 
-            <div class="services">
-                <span>
-                    <img src="Icons/coding.svg">
-                    <h4>WEB DEVELOPMENT</h4>
-                </span>    
-            </div>
-
-        </div>
-
-        <!--feed Hire wrapper-->
-        <div class="feedhire">
-
-    <!--Feedback-->
-    <div id="main-feedback">
+        <span class="h">Want to boost your startup , lets work together</span>
 
         <div class="feedback" id="feedback">
-            <div id="head">
-                <img src="Icons/feedback.svg">
-                <h3>feedback</h3>
-            </div>
+            <h3>contact</h3>
             <input id="input" name="name" type="text" placeholder="name" spellcheck="false" />
-            <textarea id="input" name="feedback" type="message" placeholder="feedback" spellcheck="false"></textarea>
+            <input id="input" name="email" type="text" placeholder="email" spellcheck="false" />
+            <textarea id="input" name="feedback" type="message" placeholder="your idea" spellcheck="false"></textarea>
             <button id="send" onclick="send()">Submit</button>
-            <span>* Your feedback help me to imporve more.</span>
+
+            <div class="social" id="social">
+
+                <a><img src="./Icons/github.svg"></a>
+                <a><img src="./Icons/gmail.svg"></a>
+                <a><img src="./Icons/instagram.svg"></a>
+                <a><img src="./Icons/fiverr.svg"></a>
+
+            </div>
         </div>
+
     </div>
 
-    <div class="hire" id="hire">
-        <ul id="contact-list">
-            <li>
-                <a href="github.com/codernuub">
-                    <img src="./Icons/github.svg" />
-                    <span>Github : codernuub</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:ar582179@gmail.com">
-                    <img src="./Icons/gmail.svg" />
-                    <span>Gmail : ar582179@gmail.com</span>
-                </a>
-            </li>
-            <li>
-                <a href="instagram.com/ninja__hattori">
-                    <img src="./Icons/instagram.svg" />
-                    <span>Instagram : ninja__hattori</span>
-                </a>
-            </li>
-            <li>
-                <a href="fiverr/ninja_hattori">
-                    <img id="fiverr" src="./Icons/fiverr.svg" />
-                    <span>fiverr: ninja_hattori</span>
-                </a>
-            </li>
-        </ul>
-</div>
-
-</div>
 
     <footer>
         <p>Made By Abdullah &copy; 2020</p>
     </footer>
+
+
 
 </body>
 <script src="index.js"></script>
