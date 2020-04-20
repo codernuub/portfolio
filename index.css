@@ -80,11 +80,12 @@ nav > ul {
 nav >ul > li {
     width:fit-content;
     padding: 1%;
-    font-size:4vw;
+    font-size:5vw;
     margin: 0;
     margin-top:10px;
     border-bottom: 0.5px solid grey;
 }
+
 nav > ul > li > a{
     text-decoration: none;
     color: grey;
@@ -135,33 +136,20 @@ height:fit-content;
 
 }
 
-
-/*profile*/
-#profile-photo{
-       width:95%;
-       padding:2.5%;
-       overflow: hidden;
-}
-
-#profile-photo > img {
-    margin: 0 15%;
-    width:65%;
-    padding:2.5%;
-    height:40%;
-    border-radius:100%;
-    box-shadow:inset 1px 1px 2px 1px rgba(0,0,0,0.080),inset -1px -1px 2px 1px rgba(0,0,0,0.080);
-}
-
 /*About me*/
+.about-me {
+    width:100%;
+    padding:0;
+    margin: 0;
+}
 
 .about {
+    opacity:0.8;
     width:75%;
     margin:10%;
-    margin-left:6%;
     padding:2.5%;
     word-break:normal;
     background:linear-gradient(rebeccapurple,purple);
-    box-shadow:25px 25px rgba(0,0,0,0.080);
     border-radius:10px;
 }
 
@@ -171,10 +159,23 @@ height:fit-content;
     word-spacing:2px;
     font-size: 5vw;
 }
-.about > img {
-    width: 25%;
-    margin:0 37.5%;
+
+
+/*profile*/
+#profile-photo{
+    width:100%;
+    margin:auto;
+    overflow: hidden;
 }
+
+#profile-photo > img {
+ margin: 0 15%;
+ width:70%;
+ height:40%;
+ border-radius:100%;
+ box-shadow:1px 1px 2px 1px rgba(0,0,0,0.080),-1px -1px 2px 1px rgba(0,0,0,0.080);
+}
+
 
 
 /*main feedback*/
@@ -187,12 +188,7 @@ height:fit-content;
     padding:2.5% 0;
 
 }
-.contact > .feedback > h3 {
-    text-align: center;
-    font-size: 5vw;
-    color:white;
-    text-transform: uppercase;
-}
+
 .contact >  .h{
     display: block;
     width:85%;
@@ -207,18 +203,31 @@ height:fit-content;
 }
 
 .contact > .feedback {
-  
+    opacity:0.8;
     border-radius: 10px;
     background:linear-gradient(45deg ,rebeccapurple,purple);
     width: 85%;
     padding:2.5%;
     margin:5%;
     transition: 0.5s;
-    box-shadow: -2px -2px 15px 3px rgba(0,0,0,0.080),2px 2px 15px 3px rgba(0,0,0,0.080);
+    box-shadow: -4px -4px 20px 3px rgba(0,0,0,0.100),4px 4px 20px 3px rgba(0,0,0,0.100);
 
 }
 
-.contact > .feedback > #input {
+.contact > .form {
+    width:100%;
+    padding:0;
+    margin: 0;
+}
+
+.contact > .feedback > .form > h3 {
+    text-align: center;
+    font-size: 5vw;
+    color:white;
+    text-transform: uppercase;
+}
+
+.contact > .feedback > .form > #input {
     
     background-color: whitesmoke;
     width:90%;
@@ -230,15 +239,15 @@ height:fit-content;
     box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.080);
     
 }
-.contact > .feedback > #input::placeholder{
+.contact > .feedback > .form >  #input::placeholder{
     color:rgba(128, 128, 128, 0.589)
 }
-.contact > .feedback > textarea {
+.contact > .feedback > .form >  textarea {
     resize: none;
     height: 150px
 }
 
-.contact > .feedback > button {
+.contact > .feedback > .form >  button {
 
     width:50%;
     padding:2.5% 0;
@@ -263,28 +272,38 @@ height:fit-content;
 }
 
 .contact >.feedback >.social {
-    width:80%;
-    margin:5% 10%;
+    width:100%;
+    margin:10% 0;
     display: flex;
+    justify-content: space-around;
 }
 .contact >.feedback >.social > a{
-    width:20%;
+    width:15%;
     padding:2.5%;
     text-align: center;
+    border-radius:5px;
 }
+.contact >.feedback >.social > a > img {
+    width:40%;
+    height:100%;
+    
+}
+/*github*/
 .contact >.feedback >.social > a:nth-child(1){
    background-color: #242124;
-   border-radius:5px;
 }
 .contact >.feedback >.social > a:nth-child(1) > img{
   filter:invert(100%)
  }
-.contact >.feedback >.social > a > img {
-    width:40%;
-    
-}
+ /*fiverr*/
 
-
+ .contact >.feedback >.social > a:nth-child(4){
+    background-color: #242124;
+ }
+ .contact >.feedback >.social > a:nth-child(4) > img{
+    width:35%;
+   filter:invert(100%)
+  }
 /*footer*/
 footer {
 
@@ -299,4 +318,121 @@ footer > p {
     text-transform: uppercase;
     font-weight:600;
     font-size: 3vw;
+}
+
+@media only screen and (min-width:900px){
+/*Header*/
+.header {
+    display: flex;
+    width: 95%;
+    padding:2.5%;
+    color:rebeccapurple;
+    justify-content: space-between;
+}
+.header > .navbar {
+    width:100%;
+    padding:0;
+    margin: auto 0;
+}
+.header > .navbar >  h2 {
+    width:fit-content;
+    padding:0;
+    margin:0;
+    font-size: 4vw;
+}
+.header > .navbar >  #menu {
+display: none;
+}
+
+/*menu*/
+nav { 
+    width:20%;
+    height:auto;
+    padding:0;
+}
+nav > ul {
+    display:flex;
+    width:98%;
+    padding:1%;
+    margin:auto 0;
+    justify-content:space-between;
+}
+nav >ul > li {
+    text-decoration: none;
+    font-size:2vw;
+    border-bottom: none;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: grey;
+}
+
+nav > ul > span{
+display: none ;;
+}
+
+
+/*About me*/
+.about-me {
+    width:95%;
+    padding:2.5%;
+    display:flex;
+    flex-direction:row-reverse;
+    border-bottom:2px solid rebeccapurple;
+}
+
+.about {
+    opacity:0.8;
+    width:95%;
+    margin:0;
+    padding:2.5%;
+    padding-bottom:0;
+}
+
+.about > p{
+    word-spacing:none;
+    font-size:2vw;
+}
+/*profile*/
+#profile-photo{
+    position: relative;
+    z-index:1;
+    margin:auto 0;
+    width:50%;
+}
+
+#profile-photo > img {
+ width:90%;
+ margin:0 5%;
+ border-radius:0;
+}
+
+
+/*main feedback*/
+.contact {  
+    width:50%;
+    margin:0 22.5%;
+    margin-top:20%;
+    padding:2.5% 0;
+}
+.contact > .feedback > .form > h3 {
+    font-size: 3vw;
+}
+.contact >  .h{
+    font-size:2vw;
+}
+.contact > .feedback > .form >  #input {
+    font-size:2vw;    
+}
+
+.contact > .feedback > .form > textarea {
+    resize: none;
+    height: 150px
+}
+
+.contact > .feedback > .form > button {
+    font-size: 3vw;
+}
+
 }
