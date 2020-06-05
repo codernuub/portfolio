@@ -30,10 +30,6 @@ section {
   margin: 5%;
   padding: 2.5% 0;
   opacity: 0.9;
-  background: slateblue;
-  border-radius: 10px;
-  box-shadow: -4px -4px 20px 3px rgba(56, 55, 55, 0.1),
-    4px 4px 20px 3px rgba(80, 79, 79, 0.1);
 }
 
 /*profile*/
@@ -54,7 +50,7 @@ section {
 
 .about > p {
   margin: 0;
-  color: whitesmoke;
+  columns: #1b1b1b;
   font-size: 6vw;
 }
 .about > p:nth-child(2) {
@@ -80,7 +76,7 @@ section > div > .goti {
   white-space: nowrap;
   text-transform: capitalize;
   text-align: center;
-  width:auto;
+  width:fit-content;
   padding: 2.5%;
   margin: 2%;
   background-color: white;
@@ -112,6 +108,11 @@ section > div > .goti:hover {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   color: whitesmoke;
+}
+
+section > div > .goti > a {
+  text-decoration: none;
+  color:black;
 }
 
 .loc > a {
