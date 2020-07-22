@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>getCurrentLOCATION</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div class="location">
+        <h2>Your Location</h2>
+
+        <div class="position">
+            <h3>Current position</h3>
+            <ul class="location-info">
+                <li><span>Latitude</span>
+                    <p></p>
+                </li>
+                <li><span>Longitude</span>
+                    <p></p>
+                </li>
+                <li><span>Accuracy</span>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="position">
+
+            <h3>Error</h3>
+            <span class="location-error">
+            </span>
+        </div>
+
+        <button onclick="locate()">Locate Me</button>
+    </div>
+
+
+</body>
+<style>
+    body {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+
+    }
+
+    .location {
+        width: 95%;
+        padding: 2.5%
+    }
+
+    h2 {
+        width: 90%;
+        padding: 5%;
+        margin: 0;
+        background-color: royalblue;
+        color: white;
+        font-size: 7vw;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .position {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 5vw;
+        text-decoration: underline;
+    }
+
+    .location-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .location-info>li {
+        margin: 2.5% 0;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        font-size: 5vw;
+    }
+
+    .location-info>li>p {
+        word-wrap: anywhere;
+        word-break: keep-all;
+        color: royalblue;
+        margin: 0
+    }
+
+    .position>.location-error {
+        font-size: 4vw;
+        color: orangered;
+    }
+
+    button {
+        width: 40%;
+        padding: 3%;
+        margin:5% 0;
+        display: block;
+        text-align: center;
+        color: white;
+        border:transparent;
+        border-radius:5px;
+        background-color: royalblue;
+    }
+</style>
+<script>
+
+    const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    }
+
+    function success(pos) {
+        const lists = document.querySelectorAll('li');
+        lists[0].children[1].innerText = pos.coords.accuracy.latitude;
+        lists[1].children[1].innerText = pos.coords.accuracy.longitude;
+        lists[2].children[1].innerText = `${pos.coords.accuracy} meters`
+    }
+
+    function error(err) {
+        const e = document.querySelector('.location-error');
+        e.innerText = `Error Code ${err.code} : ${err.message}`;
+    }
+
+    function locate() {
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    }
+</script>
+
+</html>
