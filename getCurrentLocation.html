@@ -119,8 +119,8 @@
 
     function success(pos) {
         const lists = document.querySelectorAll('li');
-        lists[0].children[1].innerText = pos.coords.accuracy.latitude;
-        lists[1].children[1].innerText = pos.coords.accuracy.longitude;
+        lists[0].children[1].innerText = pos.coords.latitude;
+        lists[1].children[1].innerText = pos.coords.longitude;
         lists[2].children[1].innerText = `${pos.coords.accuracy} meters`
     }
 
