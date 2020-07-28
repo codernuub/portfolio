@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-cross">
+      <rect width="48" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="cross" clip-path="url(#clip-cross)">
+    <g id="Group_1" data-name="Group 1" transform="translate(1.5 1.5)">
+      <line id="Line_1" data-name="Line 1" x2="32" transform="translate(6.5 22.5)" fill="none" stroke="#707070" stroke-width="4"/>
+      <line id="Line_2" data-name="Line 2" y2="32" transform="translate(22.5 6.5)" fill="none" stroke="#707070" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Camera</title>
+</head>
+
+<body>
+    <section class="section">
+        <button onclick="getCamera()">Open Camera</button>
+    </section>
+
+    <section class="camera" id="main">
+            <header><img src="./cross.svg" alt="close" onclick="cameraHandle()"></header>
+            <video class="video" playsinline autoplay>
+
+            </video>
+            <div class="footer">
+                <button onclick="snap()"></button>
+            </div>
+    
+    </section>
+
+    <section class="captured-section" id="main">
+        <header><img src="./cross.svg" alt="close" onclick="captureHandle()"></header>
+        <canvas class="canvas" width="550" height="720" >
+
+        </canvas>
+    </section>
+
+</body>
+<style>
+    html {
+        margin:0;
+        padding:0;
+        width:100%;
+        height:100%;
+    }
+    body {
+        display: flex;
+        width:100%;
+        height: 100%;
+        padding:0;
+        margin:0;
+    }
+
+    section {
+        position:fixed;
+        width: 100%;
+        height: 100%;
+        padding:0;
+        margin:0;
+    }
+
+    .section {
+        z-index:1;
+        background-color: rgb(105, 105, 105);
+    }
+
+    .section>button {
+        width: fit-content;
+        margin: 10%;
+        border-radius: 5px;
+        padding: 3%;
+        border: transparent;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.080);
+        background-color: royalblue;
+        color: white;
+        font-size: min(1em, 2em);
+        white-space: nowrap;
+    }
+    .remove-section {
+        transform: translateX(100%);
+    }
+    .in-section {
+        z-index:3;
+    };
+
+    .camera{
+        z-index:2;
+        transform: translateY(-100%);
+    }
+    #main > header {
+        z-index:4;
+        position: fixed;
+        width: 95%;
+        margin:2.5%;
+        padding:0;
+    }
+    #main > header > img {
+        width:10vw;
+        margin-left:0;
+        transform: rotate(-45deg);
+    }
+    .camera > video {
+        height:100%;
+        width:100%;
+        padding:0;
+        margin:0;
+        max-width:550px;
+        object-fit: cover;
+    }
+    .camera > .footer {
+       position: fixed;
+       z-index:4;
+       background-color: transparent;
+       text-align: center;
+       width:95%;
+       padding:2.5%;
+       bottom:0;
+    }
+    .camera > .footer > button {
+        outline-style: none;
+        width:80px;
+        max-width:100px;
+        height:80px;
+        max-height:100px;
+        border-radius:100%;
+        padding:2.5%;
+        border:5px solid royalblue;;
+        background-color: #eee;
+        font-size:1em;
+        color:white;
+        }
+    .captured-section{
+        z-index:2.5;
+        background-color: blue;
+    }
+    .captured-section > canvas {
+        width:100%;
+        height:70%;
+        object-fit: cover;
+    }
+</style>
+
+<script>
+ const video = document.querySelector('.video');
+ const xDimension = window.innerWidth , yDimension = window.innerHeight;
+ let cameraOpen = false;
+ let capture = false;
+ //slider
+ const camera = document.querySelector('.camera');
+ const captured = document.querySelector('.captured-section')
+
+  async function getCamera() {
+ try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio:false,
+            video :{
+                width:xDimension,
+                height:yDimension
+            }
+        })
+        openCamera(stream);
+    }
+    catch(e) {
+        console.log(e);
+    }
+
+    }
+
+//open Camera section
+function openCamera(stream) {
+    window.stream = stream
+    video.srcObject = stream;
+    if(capture) captureHandle(); //false
+    cameraHandle(); //true
+}
+//take photo
+function snap(){
+    const canvas = document.querySelector('.canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.clientWidth = xDimension;
+    canvas.clientHeight = yDimension;
+    ctx.drawImage(video ,0 , 0 , xDimension , yDimension);
+    window.stream.getTracks()[0].stop(); //close video;
+    cameraHandle(); //close camera section false
+    captureHandle(); //open captured section true
+}
+
+function cameraHandle(){
+    if(cameraOpen) window.stream.getTracks()[0].stop();
+    cameraOpen = !cameraOpen;
+    camera.classList.toggle('in-section');
+}
+function captureHandle(){
+    capture = !capture;
+    captured.classList.toggle('in-section'); 
+    if(!capture) getCamera();  
+}
+
+</script>
+
+</html>
