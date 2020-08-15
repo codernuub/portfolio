@@ -1,138 +1,175 @@
 body {
-  margin: 0;
+  width:100%;
+  max-width:900px;
+  margin: 0 auto;
   padding: 0;
-  background-color: whitesmoke;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: white;
+  color:#242124;
+  font-family:sans-serif;
   user-select: none;
+  font-size:calc(1rem + 1vw);
 }
 /*Header*/
 header {
   width: 95%;
-  padding: 10% 2.5%;
+  padding:10px 2.5%;
+}
+header > .head {
+  display: flex;
+  justify-content: space-between;
+  width:95%;
+  margin:0 2.5%;
+}
+header > .head > h2 {
+  font-size: calc(1.3rem + 1vw);
+  color: #242124;
+  margin:2.5% 0;
+}
+header > .head > h2 > span {
+  color: orange;
+}
+header > .head > .menu {
+  width:28px;
+  padding:1px;
+  margin: auto 0;
+}
+header > .head > .menu > span {
+  display: block;
+  width:100%;
+  height:3px;
+  background-color: orange;
+  margin:5px 0;
+  transition:0.4s;
+  border-radius:10px;
 }
 
-header > h2 {
-  text-align: center;
-  color:slateblue;
-  margin: 0;
-  font-size: 7vw;
+/*menu design*/
+header > .head > .a-menu > span:nth-child(1){
+  width:70%;
+}
+header > .head > .a-menu > span:nth-child(2){
+  width:85%;
+}
+header > .head > .a-menu > span:nth-child(3){
+  width:65%;
 }
 
-/*About me*/
+/*header navbar*/
+header > nav {
+  width:100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+header > .active-nav {
+  height:175px;
+}
+header > nav > ul {
+  width:95%;
+  padding:10px 2.5%;
+  margin:0;
+  list-style-type: none;
+  margin: auto 0;
+}
+
+header > nav > ul > li {
+  padding:10px 0;
+  font-size:1rem;
+  color: orange;
+  border-bottom: 1px solid #eee;
+}
+
+/*section*/
 section {
-  text-align:center;
-  width: 90%;
-  margin: 2.5%;
-  padding: 2.5%;
+  width:100%;
 }
-.about-me {
-  text-align: left;
-  margin: 5%;
-  padding: 2.5% 0;
-  opacity: 0.9;
+/*about me*/
+.about {
+  width:90%;
+  margin:15% 5%;
+  box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.080),
+  -1px -1px 20px 6px rgba(0, 0, 0, 0.080);
+  overflow: hidden;
+  border-radius:5px;
 }
+.about > .header{
+  display: flex;
+  justify-content: space-between;
+  width:95%;
+  padding:2.5%;
+  background-color: orange;
+  color: white;
+}
+.about > .header > span{
+  width: 15px;
+  height:15px;
+  border-radius: 100%;
+  background-color: white;
+  margin:auto 0;
+}
+.about > .header > img {
+  width:25px;
+  padding:2.5px;
+  margin: auto 0;
+  filter: invert(100%);
+}
+.about > .intro {
+  text-align: center;
+  width:90%;
+  padding: 5%;
+}
+.about > .intro > p {
+  width:90%;
+  padding:5%;
+  font-size: calc(0.85rem + 1vw);
+  font-weight: 400;
+  line-height:1.5rem;
+  color:slategray;
+}
+
 
 /*profile*/
-.about-me > img {
-  margin: 5% 15%;
-  width: 70%;
-  border-radius: 100%;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.08),
-    -1px -1px 2px 1px rgba(0, 0, 0, 0.08);
+.profile {
+  width:90%;
+  margin:5%;
 }
-
-.about {
-  width: 60%;
-  padding: 8% 15%;
-  margin: 5%;
-  word-break: normal;
+.profile > img {
+  width:70%;
+  margin:0 15%;
+  border-radius:100%;
+  box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.080),
+  -1px -1px 20px 6px rgba(0, 0, 0, 0.080);
 }
-
-.about > p {
-  margin: 0;
-  columns: #1b1b1b;
-  font-size: 6vw;
+/**skills*/
+.skills {
+  margin-top:100px;
+  padding:2.5% 0;
+  background-color: orange;
 }
-.about > p:nth-child(2) {
-  margin-top: 5px;
-  font-size: 5vw;
-  word-spacing: 5px;
+.skills > p {
+  font-size:calc(.9rem + 1vw);
+  margin:2.5%;
+  color: white;
 }
-
-/*improve here*/
-section > p {
-  margin:5% 0;
-  font-size: 5vw;
-  color:#1b1b1b;
-}
-
-section > div {
-  display: flex;
-  justify-content:center;
-  flex-wrap: wrap;
-}
-
-section > div > .goti {
-  white-space: nowrap;
-  text-transform: capitalize;
-  text-align: center;
-  width:fit-content;
-  padding: 2.5%;
-  margin: 2%;
-  background-color: white;
-  color: #1b1b1b;
-  box-shadow: -4px -4px 15px 3px rgba(104, 103, 103, 0.1),    4px 4px 15px 3px rgba(100, 100, 100, 0.1);
-  font-size: 4vw;
-  border-radius:5px;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  -ms-border-radius:5px;
-  -o-border-radius:5px;
-  transition: 0.3s ease-in;
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -ms-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-}
-
-section > div > .goti:hover {
-  transition: 0.3s ease-in;
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -ms-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-  background: linear-gradient(45deg, rebeccapurple, purple);
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  color: whitesmoke;
-}
-
-section > div > .goti > a {
-  text-decoration: none;
-  color:black;
-}
-
-.loc > a {
-  display:block;
-  margin:auto;
+.skills > .skill-list {
+  width:95%;
   padding:2.5%;
-  width:30%;
-  font-size:4vw;
-  color:white;
-  background-color:slateblue;
-  text-decoration: none;
-  border-radius:5px;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  -ms-border-radius:5px;
-  -o-border-radius:5px;
-  box-shadow: -4px -4px 15px 3px rgba(104, 103, 103, 0.1),    4px 4px 15px 3px rgba(100, 100, 100, 0.1);
 }
-.loc > .fiverr {
-  background-color: lightgreen;
+.skills > .skill-list > h4 {
+  margin:0;
+  font-size:calc(.7rem + 1vw);
+  color:#242124;
+  text-decoration: underline;
+}
+.skills > .skill-list > ul {
+  list-style: none;
+  padding:0;
+  margin:2% 0;
+  color:white;
+}
+.skills > .skill-list > ul > li {
+  font-size:calc(.8rem + 1vw);
+  margin:1% 0;
 }
 
 /*footer*/
@@ -142,7 +179,7 @@ footer {
   text-align: center;
   width: 95%;
   padding:2.5%;
-  padding-bottom: 1%;
+  border-top:1px solid #eee;
 }
 footer > div {
   width:60%;
@@ -154,46 +191,15 @@ footer > div > a {
   text-decoration: none;
 }
 footer > div > a > img {
+  color: aliceblue;
   width: 5.5vw;
   margin:5%;
 }
-footer > p {
+footer > span {
   color: grey;
   font-size: 3.5vw;
 }
 
 @media only screen and (min-width: 1100px) {
-  /*Header*/
-  header > h2 {
-    font-size: 5vw;
-  }
-  /*about me*/
-  .about-me {
-    width: 90%;
-    margin: 2.5%;
-    padding: 2.5%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .about-me > img {
-    width: 25%;
-    margin: auto;
-  }
-  .about-me > .about {
-    width: 60%;
-    padding: 0;
-    margin: auto;
-  }
-  .about-me > .about > p {
-    font-size: 2vw;
-  }
-  
-  section > div > .goti {
-    width:15%;
-    font-size:3vw;
-  }
-  section > a {
-    width:20%;
-    font-size: 3vw;
-  }
+ 
 }
