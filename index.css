@@ -1,120 +1,167 @@
 :root {
-  --testColor: #1b1b1b;
-}
-.highlight{
-  color:royalblue
+  --main-background: #ebeef1;
+  --text-color: #333;
+  --box-shadow: 0 4px 10px 0 rgba(189, 208, 223, 0.25);
 }
 
 body {
-  width: 100%;
-  margin: 0 auto;
   padding: 0;
-  background-color: white;
-  color: #242124;
-  font-family:'poppins' ,sans-serif;
-  user-select: none;
-  font-size: calc(1rem + 1vw);
+  margin: 0;
+  font-family: "Poppins";
+  color: var(--text-color);
 }
 
-/*Header*/
-header {
-  width: 95%;
-  padding: 10px 2.5%;
+h1 {
+  margin: 0;
+  height: fit-content;
 }
 
-header > .head {
-  width: 95%;
-  margin: 0 2.5%;
-}
-header > .head > h2 {
-  margin:0;
-}
-header > .head > p {
-  margin:0;
+h1 > span {
+  color: rebeccapurple;
 }
 
-section{
+ul {
+  list-style: none;
+  padding: 0;
+  margin: auto 0;
+}
+ul > li {
   display: block;
-  width:95%;
-  margin:0;
-  padding:10px 2.5%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
-.intro {
-  display:flex;
-  justify-content: space-between;
-  margin: 5% 0;
+
+a {
+  color: var(--text-color);
 }
-.intro > img {
-  width:35%;
-  margin:2.5%;
-  border-radius:100%;
-}
-.intro > #social-media {
-  width:50%;
-  display: flex;
-  justify-content: space-around;
+
+.box-area {
+  width: calc(100% - 80px);
+  padding: 40px;
   margin: auto;
 }
-.intro > #social-media > a > img {
-  width:35px;
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
 
-/**ack*/
-.ack > p{
+.main-heading {
+  display: block;
+  font-family: "Borel";
+  margin: auto 0;
+  font-size: 26px;
+  max-height: 26px;
+  color: rebeccapurple;
+}
+header > ul > li {
+  margin-left: 20px;
+  color: rebeccapurple;
+}
+header > ul > li:hover {
+  text-decoration: underline;
+}
+
+section {
+  width: calc(100% - 80px);
+  padding: 40px;
+}
+.heading {
+  display: block;
+  margin: auto;
+}
+section h1 {
+  font-family: "IntegralCFRegular";
+}
+.intro {
+  display: flex;
+}
+.intro > .content p {
+  font-size: 0.95rem;
+  word-spacing: 2px;
+  font-family: "GilroyRegular" !important;
+}
+.social-media {
+  justify-content: start !important;
+  height: fit-content;
+  margin: auto 0;
+}
+.social-media > li {
+  margin: 0 10px 10px 0;
+  height: fit-content;
+}
+.social-media > li > img {
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+
+.experiences {
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  width: fit-content;
-  margin: 0;
-  padding:5px 0;
-  /*border-bottom: 2px solid #242124;*/
 }
 
-/*skillls*/
 .skills {
-  width:100%;
-  padding:0;
-  margin:0;
-}
-
-.skills > .skill {
-  width:95%;
-  padding: 2.5%;
-}
-.skills > .skill > h5 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: fit-content;
-  font-size:1.4rem;
-  margin:2.5% 0;
-  font-weight: lighter;
-  padding:5px 0;
-  border-bottom: 2px solid #242124;
+  max-width: 600px;
+  height: fit-content;
+  margin: 40px auto;
 }
-.skills > .skill > ul {
-  padding:0;
-  list-style: none;
-}
-.skills >  .skill > ul > li > span {
-  font-size:1.1rem;
-}
-.skills > .skill > ul > li  > span:nth-child(1){
-  color: grey;
-  font-weight: bold;
-}
-
-
-
-/*footer*/
-footer {
-  margin-top: 5%;
-  border: transparent;
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  width: 95%;
-  padding: 2.5%;
-  background-color:#242124;
+  width: 23px;
+  height: fit-content;
+  padding: 0;
+  margin: 15px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: transparent;
+}
+.skill > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 
-footer > span {
-  color: white;
-  font-size:0.9rem;
+.contact {
+  text-align: center;
+  background-color: #eee
+}
+.contact div {
+  width: fit-content;
+  display: flex;
+  margin: auto;
+}
+.contact div > img {
+  width: 100px;
+  box-shadow: var(--box-shadow);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-right: 20px;
+  background-color: #fff;
+}
+.contact div > img:nth-child(2) {
+  width: 90px;
 }
 
+footer {
+  background-color: rebeccapurple;
+  padding:10px 40px;
+}
+footer > h1 {
+  text-align: center;
+  color: #fff !important;
+}
+footer > .social-media > li {
+  margin: 10px;
+  filter: invert(100%);
+}
+
+@media only screen and (min-width: 900px) {
+}
