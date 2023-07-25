@@ -1,23 +1,25 @@
-/*adjust pddig */
-window.onload = function(){
-  const header = document.querySelector('header');
-  document.querySelector('section').style.paddingTop = header.clientHeight;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
 
+  //Initial Slide
+  const section = sections[0];
+  if (isInViewport(section)) section.classList.add("slide-in");
 
-/*open nv*/
-function openNav() {
-    document.querySelector('.menu').classList.toggle('a-menu');
-    document.querySelector('nav').classList.toggle('active-nav'); 
-}
+  function slideSections() {
+    sections.forEach((section) => {
+      if (isInViewport(section)) {
+        section.classList.add("slide-in");
+      }
+    });
+  }
 
-/*open know more */
-const works = document.querySelectorAll('#work');
-
-works.forEach(work => {
-    work.addEventListener('click' , ()=>{
-      work.parentElement.children[2].classList.toggle('more');
-    })
-})
-
-
+  document.addEventListener("scroll", slideSections);
+});

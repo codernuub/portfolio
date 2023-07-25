@@ -1,14 +1,25 @@
 :root {
   --main-background: #ebeef1;
+  --main-color: rebeccapurple;
   --text-color: #333;
   --box-shadow: 0 4px 10px 0 rgba(189, 208, 223, 0.25);
 }
 
+section {
+  transform: translateX(-100%); /* Starting position, usually off-screen */
+  opacity: 0;
+  transition: 0.6s ease-out;
+}
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
 body {
   padding: 0;
   margin: 0;
   font-family: "Poppins";
   color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -17,7 +28,10 @@ h1 {
 }
 
 h1 > span {
-  color: rebeccapurple;
+  color: var(--main-color);
+}
+p > span {
+  color: var(--main-color);
 }
 
 ul {
@@ -31,9 +45,29 @@ ul > li {
   font-size: 1.1rem;
   font-weight: 500;
 }
+ul > li > a {
+  text-decoration: none;
+}
 
 a {
   color: var(--text-color);
+}
+label {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  display: flex;
+  background-image: url("icons/bg2.jpg");
+  background-size: cover;
+  z-index: -1;
 }
 
 .box-area {
@@ -53,34 +87,50 @@ a {
   margin: auto 0;
   font-size: 26px;
   max-height: 26px;
-  color: rebeccapurple;
+  color: var(--main-color);
 }
 header > ul > li {
   margin-left: 20px;
-  color: rebeccapurple;
+  color: var(--main-color);
 }
 header > ul > li:hover {
   text-decoration: underline;
 }
 
 section {
+  display: block;
+  box-sizing: content-box;
   width: calc(100% - 80px);
   padding: 40px;
-}
-.heading {
-  display: block;
-  margin: auto;
 }
 section h1 {
   font-family: "IntegralCFRegular";
 }
+section > .content {
+  display: flex;
+  flex-direction: column;
+}
+section > .content > .image-content {
+  width: 100%;
+}
+section > .content > .image-content > img {
+  width: 50%;
+  margin: auto;
+}
+section > .content > .text-content {
+  width: 100%;
+}
+
+.heading {
+  display: block;
+  margin: auto;
+}
+
 .intro {
   display: flex;
 }
 .intro > .content p {
-  font-size: 0.95rem;
   word-spacing: 2px;
-  font-family: "GilroyRegular" !important;
 }
 .social-media {
   justify-content: start !important;
@@ -91,11 +141,14 @@ section h1 {
   margin: 0 10px 10px 0;
   height: fit-content;
 }
-.social-media > li > img {
+.social-media > li > a > img {
+  display: block;
   width: 30px;
   aspect-ratio: 1/1;
+  margin: auto;
 }
 
+/*SKILLS SECTIONS*/
 .experiences {
   text-align: center;
 }
@@ -104,18 +157,17 @@ section h1 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   width: fit-content;
-  max-width: 600px;
   height: fit-content;
-  margin: 40px auto;
+  margin: 40px auto 0 auto;
 }
 .skill {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 23px;
+  width: 15%;
   height: fit-content;
   padding: 0;
   margin: 15px;
@@ -129,39 +181,96 @@ section h1 {
   aspect-ratio: 1/1;
 }
 
+/*CONTACT SECTION*/
 .contact {
   text-align: center;
-  background-color: #eee
 }
-.contact div {
-  width: fit-content;
-  display: flex;
+.contact > .content > .text-content {
   margin: auto;
 }
-.contact div > img {
-  width: 100px;
-  box-shadow: var(--box-shadow);
-  padding: 5px 10px;
-  border-radius: 6px;
-  margin-right: 20px;
-  background-color: #fff;
+.contact > .content > .text-content > div {
+  width: fit-content;
+  display: flex;
+  margin: 0 auto;
 }
-.contact div > img:nth-child(2) {
+.contact > .content > .text-content > div > img {
+  width: 100px;
+  padding: 10px 0;
+}
+.contact > .content > .text-content > div > img:nth-child(2) {
   width: 90px;
+  margin-left: 20px;
 }
 
 footer {
-  background-color: rebeccapurple;
-  padding:10px 40px;
+  padding: 10px 40px;
 }
 footer > h1 {
   text-align: center;
-  color: #fff !important;
 }
 footer > .social-media > li {
   margin: 10px;
-  filter: invert(100%);
 }
 
 @media only screen and (min-width: 900px) {
+  .heading {
+    font-size: 30px;
+  }
+  .box-area,
+  section {
+    width: calc(100% - 120px);
+    padding: 60px;
+  }
+  /*SKILL SECTION*/
+  .skill {
+    width: 8%;
+  }
+  /*CONTACT SECTION*/
+  .contact {
+    text-align: center;
+  }
+  .contact > .content > .text-content {
+    width: 700px;
+    padding: 40px;
+    margin: auto;
+  }
+
+  .contact > .content > .text-content > div {
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+  }
+  .contact > .content > .text-content > div > img {
+    width: 130px;
+    padding: 10px 0;
+    margin-right: 20px;
+  }
+  .contact > .content > .text-content > div > img:nth-child(2) {
+    width: 120px;
+  }
+
+  footer {
+    padding: 10px 60px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .heading {
+    font-size: 35px;
+  }
+  .box-area {
+    width: calc(100% - 160px);
+    padding: 60px 80px;
+  }
+  section {
+    width: calc(100% - 160px);
+    padding: 60px 80px;
+  }
+  /*SKILL SECTION*/
+  .skill {
+    width: 5%;
+  }
+  footer {
+    padding: 5px 80px;
+  }
 }
