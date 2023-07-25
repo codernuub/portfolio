@@ -55,7 +55,7 @@ label {
   height: 100%;
   opacity: 0.1;
   display: flex;
-  background-image: url("icons/bg2.jpg");
+  background-image: url("icons/bg2.webp");
   background-size: cover;
   z-index: -1;
 }
