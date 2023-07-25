@@ -1,40 +1,15 @@
 @font-face {
   font-family: "GilroyRegular";
-  src: local("sans-serif"), url("/fonts/Gilroy-Regular.ttf");
+  src: local("sans-serif"), url("fonts/Gilroy-Regular.ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GilroyMedium";
-  src: local("sans-serif"), url("/fonts/Gilroy-Medium.ttf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GilroySemiBold";
-  src: local("sans-serif"), url("/fonts/Gilroy-SemiBold.ttf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GilroyBold";
-  src: local("sans-serif"), url("/fonts/Gilroy-Bold.ttf");
-  font-weight: normal;
-  font-style: normal;
-
   font-display: swap;
 }
 
 @font-face {
   font-family: "IntegralCFRegular";
   src: local("sans-serif"),
-    url("/fonts/Fontspring-DEMO-integralcf-regular.otf");
+    url("fonts/Fontspring-DEMO-integralcf-regular.otf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
